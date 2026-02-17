@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  margin: 10px;
+}
+
+/**
+* Create a position for the map
+* on the page */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/**
+* Set rules for how the map overlays
+* (information box and legend) will be displayed
+* on the page. */
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  margin-right: 20px;
+  font-family: "Playwrite AT", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  overflow: auto;
+  border-radius: 3px;
+  z-index: 1; /* 确保悬浮窗和图例浮在地图上方 */
+  pointer-events: auto; /* 确保鼠标事件能穿透到地图，或者被容器捕获 */
+}
+
+#features {
+  top: 0;
+  height: 200px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+#legend {
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: normal; /* 重置行高 */
+  height: auto;
+  bottom: 40px;
+  width: 170px; /* 宽度设为刚好能放下 5 个方块 */
+  display: flex;
+  flex-wrap: wrap; /* 允许换行，形成两行排列 */
+  justify-content: flex-start;
+}
+
+.legend-key {
+  display: flex; /* 开启 Flex 布局让文字居中 */
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%; /* 对应 PDF 中的圆角矩形 */
+  width: 28px; /* 调整大小以适应数字 */
+  height: 28px;
+  margin: 2px; /* 方块之间的间距 */
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
